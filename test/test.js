@@ -554,10 +554,10 @@ describe('server on https', function() {
   });
 });
 
-describe('originBlacklist', function() {
+describe('originDenylist', function() {
   before(function() {
     cors_anywhere = createServer({
-      originBlacklist: ['http://denied.origin.test'],
+      originDenylist: ['http://denied.origin.test'],
     });
     cors_anywhere_port = cors_anywhere.listen(0).address().port;
   });
@@ -587,10 +587,10 @@ describe('originBlacklist', function() {
   });
 });
 
-describe('originWhitelist', function() {
+describe('originAllowlist', function() {
   before(function() {
     cors_anywhere = createServer({
-      originWhitelist: ['https://permitted.origin.test'],
+      originAllowlist: ['https://permitted.origin.test'],
     });
     cors_anywhere_port = cors_anywhere.listen(0).address().port;
   });
